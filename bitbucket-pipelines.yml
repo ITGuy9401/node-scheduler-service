@@ -2,16 +2,17 @@ image: node:lts-stretch
 
 pipelines:
   default:
-    develop:
-      - step:
-          name: Build
-          script:
-            - npm install
-            - npm run compile
-            - mkdir _TMP_DEB
-            - cp -r ./jobs-available _TMP_DEB/
-            - cp -r ./jobs-enabled _TMP_DEB/
-            - cp -r ./lib _TMP_DEB/
-            - cp -r ./DEBIAN _TMP_DEB/
-            - chmod a+x _TMP_DEB/DEBIAN/control
-          artifacts:
+    - step:
+        name: Build
+        script:
+          - npm install
+          - npm run compile
+          - mkdir _TMP_DEB
+          - cp -r ./jobs-available _TMP_DEB/opt/node-scheduler
+          - cp -r ./jobs-enabled _TMP_DEB/opt/node-scheduler
+          - cp -r ./lib _TMP_DEB/opt/node-scheduler
+          - cp -r ./DEBIAN _TMP_DEB/
+          - chmod a+x _TMP_DEB/DEBIAN/control
+          - dpkg-deb --build _TMP_DEB
+        artifacts:
+          - *.deb
