@@ -7,6 +7,11 @@ pipelines:
         script:
           - npm install
           - npm run compile
+        artifacts:
+          - *
+    - step:
+        name: Debian Package
+        script:
           - mkdir _TMP_DEB
           - mkdir _TMP_DEB/opt
           - mkdir _TMP_DEB/opt/node-scheduler
