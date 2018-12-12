@@ -8,7 +8,7 @@ pipelines:
           - npm install
           - npm run compile
         artifacts:
-          - *
+          - ./*
     - step:
         name: Debian Package
         script:
