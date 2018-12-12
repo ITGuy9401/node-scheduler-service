@@ -1,0 +1,12 @@
+{
+  "loggingPath": "/var/log",
+  "instanceName": "default",
+  "job": {
+    "cron": "0 21 * * *",
+    "type": "pubsub",
+    "meta": {
+      "project": "foo",
+      "topic": "bar"
+    }
+  }
+}
