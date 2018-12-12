@@ -1,9 +1,8 @@
 import winston from "winston";
-import config from "./config";
 import path from "path";
 
-const loggingPath = config.loggingPath || path.join(__dirname, "/logs");
-const instanceName = config.instanceName || "default";
+const loggingPath = process.env.LOGGING_PATH || path.join(__dirname, "/logs");
+const instanceName = process.env.INSTANCE_NAME || "default";
 
 const options = {
     file: {

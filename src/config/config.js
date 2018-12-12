@@ -1,7 +1,21 @@
 import fs from "fs";
 import path from "path";
 
-const configFile = fs.readFileSync(process.env.CONFIG_FILE || path.join(__dirname, "..", "..", "config.default.json"));
-const config = JSON.parse(configFile);
+const PATH = path.join(__dirname, "..", "..", "jobs-enabled");
 
-export default config;
+const jobs = fs.readdirSync(PATH, {
+    withFileTypes: true
+}).filter(file => file.name.toString().endsWith(".json"))
+    .map(file => {
+        if (file.isFile()) {
+            return fs.readFileSync(path.join(PATH, file.name), {
+                encoding: "utf8"
+            });
+        } else {
+            return fs.readlinkSync(path.join(PATH, file.name), {
+                encoding: "utf8"
+            });
+        }
+    });
+
+export default jobs;

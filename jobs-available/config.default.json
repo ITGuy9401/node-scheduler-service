@@ -1,7 +1,6 @@
 {
-  "loggingPath": "/var/log",
-  "instanceName": "default",
   "job": {
+    "name": "foobar job",
     "cron": "* * * * *",
     "type": "pubsub",
     "meta": {
