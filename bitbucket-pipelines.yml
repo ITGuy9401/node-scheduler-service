@@ -3,7 +3,7 @@ image: node:lts-stretch
 pipelines:
   default:
     - step:
-        name: Build
+        name: Build & Package
         script:
           - npm install
           - npm run compile
