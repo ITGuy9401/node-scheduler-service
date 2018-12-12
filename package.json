@@ -4,8 +4,8 @@
   "description": "Cloud Scheduler single instance",
   "main": "index.js",
   "scripts": {
-    "local-start": "npx babel-node src/Scheduler.js",
-    "compile": "babel src --out-dir lib"
+    "compile": "babel src --out-dir lib --copy-files",
+    "start": "npx nodemon lib/Scheduler.js"
   },
   "repository": {
     "type": "git",

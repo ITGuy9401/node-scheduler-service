@@ -5,18 +5,25 @@ import logger from "../config/logger";
 const projectId = config.job.meta.project;
 const topic = config.job.meta.topic;
 
-export default async function trigger() {
-    const client = new PubSub({
-        projectId: projectId
-    });
+async function trigger() {
+    logger.info("Triggering job");
+    try {
+        const client = new PubSub({
+            projectId: projectId
+        });
 
-    const dataBuffer = new Buffer(`triggered on ${new Date().toISOString()}`, "UTF-8");
+        const dataBuffer = Buffer.from(`triggered on ${new Date().toISOString()}`, "UTF-8");
 
-    const messageId = await client
-        .topic(topic)
-        .publisher()
-        .publish(dataBuffer);
+        const messageId = await client
+            .topic(topic)
+            .publisher()
+            .publish(dataBuffer);
 
-    logger.info("Triggered job - MessageID:", messageId);
-    return messageId;
+        logger.info("Triggered job - MessageID:", messageId);
+        return messageId;
+    } catch (error) {
+        logger.error("There was an error triggering the job", error);
+    }
 }
+
+export default trigger;

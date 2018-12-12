@@ -2,7 +2,7 @@
   "loggingPath": "/var/log",
   "instanceName": "default",
   "job": {
-    "cron": "0 21 * * *",
+    "cron": "* * * * *",
     "type": "pubsub",
     "meta": {
       "project": "foo",

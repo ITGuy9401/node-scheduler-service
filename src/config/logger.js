@@ -1,13 +1,14 @@
 import winston from "winston";
 import config from "./config";
+import path from "path";
 
-const loggingPath = config.loggingPath || __dirname + "/logs";
+const loggingPath = config.loggingPath || path.join(__dirname, "/logs");
 const instanceName = config.instanceName || "default";
 
 const options = {
     file: {
         level: 'info',
-        filename: `${loggingPath}/scheduler-${instanceName}.log`,
+        filename: path.join(loggingPath, `/scheduler-${instanceName}.log`),
         handleExceptions: true,
         json: true,
         maxsize: 5242880, // 5MB
