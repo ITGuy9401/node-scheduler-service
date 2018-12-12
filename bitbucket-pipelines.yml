@@ -1,15 +1,15 @@
-image: node:lts-stretch
-
 pipelines:
   default:
     - step:
+        image: node:lts-alpine
         name: Build & Package
         script:
           - npm install
           - npm run compile
         artifacts:
-          - ./
+          - ./**
     - step:
+        image: ubuntu:bionic
         name: Debian Package
         script:
           - mkdir _TMP_DEB
