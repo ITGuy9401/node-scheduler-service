@@ -7,6 +7,7 @@ mkdir _TMP_DEB/etc/init.d
 mkdir _TMP_DEB/opt
 mkdir _TMP_DEB/opt/node-scheduler
 ln -s /opt/node-scheduler/initd-runner.sh _TMP_DEB/etc/init.d/node-scheduler
+cp -r ./node_modules _TMP_DEB/opt/node-scheduler
 cp -r ./jobs-available _TMP_DEB/opt/node-scheduler
 cp -r ./jobs-enabled _TMP_DEB/opt/node-scheduler
 cp -r ./lib _TMP_DEB/opt/node-scheduler
