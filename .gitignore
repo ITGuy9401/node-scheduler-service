@@ -1,3 +1,9 @@
+# ide files
 .idea
 *.iml
+
+# library root
 node_modules
+
+# target directory for compilation
+lib
