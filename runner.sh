@@ -1,2 +1,2 @@
 #!/bin/bash
-npx nodemon lib/Scheduler.js
+node lib/Scheduler.js
