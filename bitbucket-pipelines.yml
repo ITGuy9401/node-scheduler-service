@@ -15,4 +15,4 @@ pipelines:
           - chmod a+x _TMP_DEB/DEBIAN/control
           - dpkg-deb --build _TMP_DEB
         artifacts:
-          - *.deb
+          - ./*.deb
