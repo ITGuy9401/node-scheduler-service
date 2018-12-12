@@ -1,3 +1,4 @@
+#!/usr/bin/node
 import logger from "./config/logger";
 import config from "./config/config";
 import * as cron from "node-cron";
