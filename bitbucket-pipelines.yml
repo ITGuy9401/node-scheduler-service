@@ -13,8 +13,11 @@ pipelines:
           - cp -r ./jobs-available _TMP_DEB/opt/node-scheduler
           - cp -r ./jobs-enabled _TMP_DEB/opt/node-scheduler
           - cp -r ./lib _TMP_DEB/opt/node-scheduler
+          - cp -r ./runner.sh _TMP_DEB/opt/node-scheduler
           - cp -r ./DEBIAN _TMP_DEB/
           - chmod a+x _TMP_DEB/DEBIAN/control
+          - chmod a+x _TMP_DEB/opt/node-scheduler/runner.sh
+          - echo etc/init.d/node-scheduler opt/node-scheduler/runner.sh > _TMP_DEB/DEBIAN/node-scheduler.links
           - dpkg-deb --build _TMP_DEB
         artifacts:
           - ./*.deb
