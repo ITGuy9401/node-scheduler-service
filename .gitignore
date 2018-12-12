@@ -7,3 +7,5 @@ node_modules
 
 # target directory for compilation
 lib
+*.deb
+*.zip
