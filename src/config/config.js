@@ -5,10 +5,7 @@ const PATH = path.join(__dirname, "..", "..", "jobs-enabled");
 
 const jobs = fs.readdirSync(PATH, {
     withFileTypes: true
-}).filter(file => {
-    console.log(file);
-    return file.name.toString().endsWith(".json");
-})
+}).filter(file => file.name.toString().endsWith(".json"))
     .map(file => {
         if (file.isFile()) {
             return fs.readFileSync(path.join(PATH, file.name), {
