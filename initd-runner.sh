@@ -14,6 +14,8 @@ PID_FILE="$PID_DIR/$APP_NAME.pid"
 LOG_DIR="$APP_DIR/log"
 LOG_FILE="$LOG_DIR/$APP_NAME.log"
 NODE_EXEC=$(which node)
+DATADOG_APIKEY=
+DATADOG_APPKEY=
 
 ###############
 
