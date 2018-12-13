@@ -1,8 +1,7 @@
 # README #
 
-1. Create a config file json
-2. launch the application with the CONFIG_FILE variable configured 
-
-```
-CONFIG_FILE=/opt/scheduler/config-my-scheduler.json npm start
-```
+1. Create a config file json in jobs-available
+2. Create a symlink for this file in jobs-enabled
+3. start the application
+4. access the application through `GET http://localhost:PORT/`
+    to get a list of the loaded jobs. 
