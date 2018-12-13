@@ -7,5 +7,5 @@ pipelines:
           - apt-get update && apt-get install -y zip
           - ./build.sh
         artifacts:
-          - ./*.zip
-          - ./*.deb
+          - node-scheduler.deb
+          - node-scheduler.zip
