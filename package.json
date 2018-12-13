@@ -7,6 +7,9 @@
     "compile": "babel src --out-dir lib --copy-files",
     "start": "node lib/Scheduler.js"
   },
+  "engines": {
+    "node": "^10.13.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/avicedomini95/scheduler.git"
