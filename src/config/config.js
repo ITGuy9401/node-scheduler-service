@@ -16,6 +16,7 @@ const jobs = fs.readdirSync(PATH, {
                 encoding: "utf8"
             });
         }
-    });
+    })
+    .map(stringJson => JSON.parse(stringJson));
 
 export default jobs;

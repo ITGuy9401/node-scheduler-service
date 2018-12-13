@@ -11,6 +11,8 @@ async function trigger(config) {
             projectId: config.job.meta.project
         });
 
+        logger.info(`Triggering ${config.job.name} on project ${config.job.meta.project} and topic ${config.job.meta.topic}`);
+
         const dataBuffer = Buffer.from(message, "UTF-8");
 
         const messageId = await client
@@ -18,7 +20,7 @@ async function trigger(config) {
             .publisher()
             .publish(dataBuffer);
 
-        logger.info(`${message} - MessageID:`, messageId);
+        logger.info(`${message} - MessageID: ${messageId}`);
         return messageId;
     } catch (error) {
         logger.error("There was an error triggering the job", error);

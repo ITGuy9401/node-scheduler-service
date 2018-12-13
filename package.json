@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "compile": "babel src --out-dir lib --copy-files",
-    "start": "npx nodemon lib/Scheduler.js"
+    "start": "node lib/Scheduler.js"
   },
   "repository": {
     "type": "git",
