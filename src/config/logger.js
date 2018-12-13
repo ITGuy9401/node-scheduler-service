@@ -1,6 +1,5 @@
 import winston from "winston";
 import path from "path";
-import DatadogSupport from "winston-datadog";
 
 const loggingPath = process.env.LOGGING_PATH || path.join(__dirname, "/logs");
 const instanceName = process.env.INSTANCE_NAME || "default";
@@ -22,10 +21,6 @@ const options = {
         json: false,
         timestamp: true,
         colorize: true
-    },
-    datadog: {
-        api_key: process.env.DATADOG_APIKEY || "",
-        app_key: process.env.DATADOG_APPKEY || ""
     }
 };
 
@@ -38,8 +33,7 @@ export default winston.createLogger({
     ),
     transports: [
         new winston.transports.File(options.file),
-        new winston.transports.Console(options.console),
-        new DatadogSupport(options.datadog)
+        new winston.transports.Console(options.console)
     ],
     exitOnError: false
 });

@@ -4,7 +4,7 @@ APP_NAME="node-scheduler"
 USER="root"
 GROUP="$USER"
 NODE_ENV="production"
-PORT="30125"
+PORT=30125
 APP_DIR="/opt/node-scheduler"
 NODE_APP="lib/Scheduler.js"
 KWARGS=""
@@ -14,8 +14,6 @@ PID_FILE="$PID_DIR/$APP_NAME.pid"
 LOG_DIR="$APP_DIR/log"
 LOG_FILE="$LOG_DIR/$APP_NAME.log"
 NODE_EXEC=$(which node)
-DATADOG_APIKEY=
-DATADOG_APPKEY=
 
 ###############
 
