@@ -14,7 +14,6 @@ const jobs = fs.readdirSync(PATH, {
         });
     })
     .map(stringJson => {
-        logger.info(stringJson);
         return JSON.parse(stringJson);
     });
 
