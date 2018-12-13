@@ -18,7 +18,6 @@ const banner = fs.readFileSync(path.join(__dirname, "banner.txt")).toString("UTF
 
 logger.info(`Found ${config.length} jobs to schedule`);
 
-console.log(config);
 for (let cfg of config) {
     switch (cfg.job.type) {
         case "pubsub":
