@@ -9,15 +9,9 @@ const jobs = fs.readdirSync(PATH, {
 }).filter(file => file.name.toString().endsWith(".json"))
     .map(file => {
         logger.info(`logging file ${file.name}`);
-        if (file.isFile()) {
-            return fs.readFileSync(path.join(PATH, file.name), {
-                encoding: "utf8"
-            });
-        } else {
-            return fs.readlinkSync(path.join(PATH, file.name), {
-                encoding: "utf8"
-            });
-        }
+        return fs.readFileSync(path.join(PATH, file.name), {
+            encoding: "utf8"
+        });
     })
     .map(stringJson => {
         logger.info(stringJson);
