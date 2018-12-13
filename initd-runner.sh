@@ -71,6 +71,8 @@ start_it() {
         PORT=$PORT
         NODE_ENV=$NODE_ENV
         NODE_CONFIG_DIR=$CONFIG_DIR
+        DATADOG_APIKEY=$DATADOG_APIKEY
+        DATADOG_APPKEY=$DATADOG_APPKEY
         $NODE_EXEC \"$APP_DIR\"/$NODE_APP $KWARGS &>> \"$LOG_FILE\" &
         echo \$! > $PID_FILE" | sudo -i -u $USER
     echo "$APP_NAME started with pid $(get_pid)"
