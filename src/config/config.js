@@ -19,6 +19,9 @@ const jobs = fs.readdirSync(PATH, {
             });
         }
     })
-    .map(stringJson => JSON.parse(stringJson));
+    .map(stringJson => {
+        logger.info(stringJson);
+        return JSON.parse(stringJson);
+    });
 
 export default jobs;
