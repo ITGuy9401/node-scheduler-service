@@ -13,8 +13,9 @@ cp -r ./jobs-enabled _TMP_DEB/opt/node-scheduler
 cp -r ./lib _TMP_DEB/opt/node-scheduler
 cp -r ./*.sh _TMP_DEB/opt/node-scheduler
 cp -r ./DEBIAN _TMP_DEB/
-chmod a+x _TMP_DEB/DEBIAN/control
-chmod a+x _TMP_DEB/opt/node-scheduler/*.sh
+chmod 755 _TMP_DEB/DEBIAN
+chmod 755 _TMP_DEB/DEBIAN/control
+chmod 755 _TMP_DEB/opt/node-scheduler/*.sh
 dpkg-deb --build _TMP_DEB
 #rm -rf _TMP_DEB/DEBIAN # comment for debug
 cd _TMP_DEB && zip -r node-scheduler.zip . && mv node-scheduler.zip ../ && cd ..
