@@ -11,7 +11,7 @@ import express from "express";
 const app = express();
 app.use(express.json());
 
-const port = 30125;
+const port = process.env.PORT || 30125;
 
 
 const banner = fs.readFileSync(path.join(__dirname, "banner.txt")).toString("UTF-8");
